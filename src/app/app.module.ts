@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { taskReducer } from './task.reducer'
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
+    StoreModule.forRoot({ tasks: taskReducer }),
+     EffectsModule.forRoot([]),
     AppRoutingModule
   ],
-  providers: [],
+ // providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from './task.reducer';
 import { addTask, updateTask, deleteTask } from './task.actions';
@@ -11,14 +11,14 @@ import { selectTasks } from '../app/task.selectors';
 })
 export class AppComponent {
   title = 'ngrx-crud-example-pravin';
-  tasks: Task[] = [];
+  tasks: Task[] = [];   
   constructor(private store: Store<AppState>) {
     this.store.select(selectTasks).subscribe(tasks => this.tasks = tasks);
   }
   addNewTask() {
     const newTask: Task = {
       id: this.tasks.length + 1,
-      title: 'New Task',
+      title: 'Task-'+ (this.tasks.length + 1),
       description: 'This is a new task.'
     };
     this.store.dispatch(addTask({ task: newTask }));
