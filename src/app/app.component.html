@@ -179,6 +179,7 @@
 
 <main class="main">
   <div class="content">
+    
     <div class="left-side">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -225,8 +226,17 @@
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
       </svg>
-      <h1>Hello, {{ title }}</h1>
+      <h1>Hello, {{ title }}</h1><br><br>
       <p>Congratulations! Your app is running. 🎉</p>
+      <br><br>
+      <div >
+        <form autocomplete="off" (ngSubmit)="add()">
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your TODO item</mat-label>
+    <input name="title" matInput [(ngModel)]="newTitle" />
+  </mat-form-field>
+</form>
+      </div>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
