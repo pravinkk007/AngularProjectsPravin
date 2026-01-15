@@ -1,0 +1,16 @@
+<div class="cart-container">
+  <h2>Shopping Cart</h2>
+
+  <ul>
+    <li *ngFor="let item of items$ | async">
+      {{ item.name }} - ${{ item.price }}
+      <button (click)="onRemove(item.id)">Remove</button>
+    </li>
+  </ul>
+
+  <hr>
+  <h3>Total: ${{ total$ | async }}</h3>
+
+  <button (click)="onAdd('Apple', 2)">Add Apple ($2)</button>
+  <button (click)="onAdd('Pizza', 15)">Add Pizza ($15)</button>
+</div>
