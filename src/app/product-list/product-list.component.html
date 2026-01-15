@@ -1,0 +1,9 @@
+<div class="product-container">
+
+<ul>
+    <li *ngFor="let c of products$ | async">
+        
+        {{c.name}}-Rs{{c.price}}
+    </li>
+</ul>
+</div>
